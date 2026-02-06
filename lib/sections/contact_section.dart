@@ -646,19 +646,19 @@ class _ContactSectionState extends State<ContactSection>
   Future<void> _handleSubmit() async {
     if (_formKey.currentState!.validate()) {
       setState(() => _isLoading = true);
-
+// use your emailjs keys here
       try {
         await emailjs.send(
-          'service_exctz1a',
-          'template_fvfomcr',
+          'service_exctz1a', // your key here
+          'template_fvfomcr', // your key here
           {
             'from_name': _nameController.text,
             'from_email': _emailController.text,
             'message': _messageController.text,
           },
           const emailjs.Options(
-            publicKey: 'b7mqLtvZaTin2dQI1',
-            privateKey: 'lbyZn7TgaptufO3wkdIk8',
+            publicKey: 'b7mqLtvZaTin2dQI1', // your key here
+            privateKey: 'lbyZn7TgaptufO3wkdIk8', // your key here
           ),
         );
 
