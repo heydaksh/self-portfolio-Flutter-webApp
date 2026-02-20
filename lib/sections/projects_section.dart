@@ -530,7 +530,33 @@ class _ProjectCardState extends State<ProjectCard> {
                           height: isMobile ? 45 : 46,
                           child: _buildActionButton(
                             'Source Code',
-                            Icons.launch,
+                            Icons.code,
+                            widget.project.color,
+                            () async {
+                              if (widget.project.githubUrl.isEmpty) {
+                                return;
+                              }
+
+                              final Uri url =
+                                  Uri.parse(widget.project.githubUrl);
+
+                              if (!await launchUrl(
+                                url,
+                                mode: LaunchMode.externalApplication,
+                              )) {
+                                throw 'Could not launch $url';
+                              }
+                            },
+                            isMobile,
+                          ),
+                        ),
+                        SizedBox(height: verticalGap),
+                        SizedBox(
+                          width: double.infinity,
+                          height: isMobile ? 45 : 46,
+                          child: _buildActionButton(
+                            'Live Link',
+                            Icons.mobile_screen_share_rounded,
                             widget.project.color,
                             () async {
                               if (widget.project.liveUrl.isEmpty) {

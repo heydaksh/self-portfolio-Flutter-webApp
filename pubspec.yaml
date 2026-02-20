@@ -75,7 +75,6 @@ flutter:
   assets:
      - assets/
      - assets/images/
-     - assets/profile.jpg
      - assets/animation/
   #   - images/a_dot_ham.jpeg
 

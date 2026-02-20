@@ -504,6 +504,7 @@ class _ContactSectionState extends State<ContactSection>
         ),
         const SizedBox(height: 8),
         TextFormField(
+          cursorColor: Colors.white,
           controller: controller,
           keyboardType: keyboardType,
           maxLines: maxLines,
@@ -652,8 +653,8 @@ class _ContactSectionState extends State<ContactSection>
           'service_exctz1a', // your key here
           'template_fvfomcr', // your key here
           {
-            'from_name': _nameController.text,
-            'from_email': _emailController.text,
+            'name': _nameController.text,
+            'email': _emailController.text,
             'message': _messageController.text,
           },
           const emailjs.Options(
