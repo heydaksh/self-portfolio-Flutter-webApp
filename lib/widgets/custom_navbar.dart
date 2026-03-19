@@ -120,6 +120,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
     return GestureDetector(
       onTap: () => widget.onSectionTap(widget.homeKey),
       child: AnimatedContainer(
+        height: 40,
         duration: const Duration(milliseconds: 300),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
         decoration: BoxDecoration(
@@ -140,13 +141,14 @@ class _CustomNavbarState extends State<CustomNavbar> {
                 ]
               : [],
         ),
+        alignment: Alignment.center,
         child: const Text(
-          'Portfolio',
+          'D. S',
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            letterSpacing: -0.5,
+            letterSpacing: 1,
           ),
         ),
       ),

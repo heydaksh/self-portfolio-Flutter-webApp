@@ -306,7 +306,8 @@ class _ContactSectionState extends State<ContactSection>
             ),
             child: Icon(
               icon,
-              color: const Color(0xFF6366F1),
+              // color: const Color(0xFF6366F1),
+              color: Colors.white,
               size: 20,
             ),
           ),
