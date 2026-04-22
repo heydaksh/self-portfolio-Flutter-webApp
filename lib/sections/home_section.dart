@@ -325,8 +325,8 @@ class _HomeSectionState extends State<HomeSection>
             ),
             ResponsiveUtils.horizontalSpace(context, 12),
             Container(
-              width: ResponsiveUtils.width(context, 8),
-              height: ResponsiveUtils.height(context, 8),
+              width: ResponsiveUtils.width(context, 9),
+              height: ResponsiveUtils.height(context, 9),
               decoration: const BoxDecoration(
                 color: Color(0xFF10B981),
                 shape: BoxShape.circle,
@@ -341,21 +341,21 @@ class _HomeSectionState extends State<HomeSection>
           ],
         ),
         ResponsiveUtils.verticalSpace(context, 8),
-        Text(
-          '5 Months+ Experience',
-          style: TextStyle(
-            color: Colors.grey[400],
-            fontSize: ResponsiveUtils.fontSize(
-              context,
-              ResponsiveUtils.isMobile(context)
-                  ? 14
-                  : ResponsiveUtils.isTablet(context)
-                      ? 16
-                      : 18,
-            ),
-            fontWeight: FontWeight.w400,
-          ),
-        ),
+        // Text(
+        //   '5 Months+ Experience',
+        //   style: TextStyle(
+        //     color: Colors.grey[400],
+        //     fontSize: ResponsiveUtils.fontSize(
+        //       context,
+        //       ResponsiveUtils.isMobile(context)
+        //           ? 14
+        //           : ResponsiveUtils.isTablet(context)
+        //               ? 16
+        //               : 18,
+        //     ),
+        //     fontWeight: FontWeight.w400,
+        //   ),
+        // ),
       ],
     );
   }
@@ -592,18 +592,8 @@ class _HomeSectionState extends State<HomeSection>
                                   fit: BoxFit.cover,
                                   width: double.infinity,
                                   height: double.infinity,
-                                  errorBuilder: (context, error, stackTrace) =>
-                                      Image.asset(
-                                    "assets/profile.jpg",
-                                    fit: BoxFit.cover,
-                                  ),
                                 )
-                              : Image.asset(
-                                  "assets/profile.jpg",
-                                  fit: BoxFit.cover,
-                                  width: double.infinity,
-                                  height: double.infinity,
-                                ),
+                              : const SizedBox(),
                         ),
                         _buildCubeFace(
                           context: context,
@@ -614,6 +604,7 @@ class _HomeSectionState extends State<HomeSection>
                             fit: BoxFit.cover,
                             width: double.infinity,
                             height: double.infinity,
+                            repeat: false,
                             errorBuilder: (context, error, stackTrace) =>
                                 const Icon(
                               Icons.code,
@@ -752,17 +743,90 @@ class CodeParticle {
   late Color color;
 
   static final List<String> symbols = [
-    '{',
-    '}',
-    '</>',
-    ';',
-    '0',
-    'var',
-    'if',
-    '&&',
-    'x',
-    '!=',
-    '??',
+    "{",
+    "}",
+    "(",
+    ")",
+    "[",
+    "]",
+    "<",
+    ">",
+    "</>",
+    "<<",
+    ">>",
+    "::",
+    "=>",
+    "->",
+    "+",
+    "-",
+    "*",
+    "/",
+    "%",
+    "=",
+    "==",
+    "===",
+    "!=",
+    "!==",
+    ">",
+    "<",
+    ">=",
+    "<=",
+    "&&",
+    "||",
+    "!",
+    "??",
+    "?.",
+    "+=",
+    "-=",
+    "*=",
+    "/=",
+    "%=",
+    "<<=",
+    ">>=",
+    "&=",
+    "|=",
+    "^=",
+    "@",
+    "#",
+    "^",
+    "&",
+    "*",
+    "~",
+    "`",
+    "\\",
+    "|",
+    ":",
+    ";",
+    ",",
+    ".",
+    "...",
+    "//",
+    "/*",
+    "*/",
+    "0",
+    "1",
+    "x",
+    "y",
+    "z",
+    "_",
+    "var",
+    "let",
+    "const",
+    "if",
+    "else",
+    "for",
+    "while",
+    "return",
+    "true",
+    "false",
+    "null",
+    "undefined",
+    "async",
+    "await",
+    " ()",
+    "{}",
+    "<>",
+    "{ ... }"
   ];
 
   static final List<Color> colors = [

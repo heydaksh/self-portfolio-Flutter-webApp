@@ -372,7 +372,7 @@ class _ContactSectionState extends State<ContactSection>
       },
       {
         'icon': Icons.alternate_email,
-        'label': 'Twitter',
+        'label': 'X',
         'url': data['twitter'] ?? 'https://twitter.com'
       },
     ];
