@@ -87,6 +87,9 @@ class _LoginScreenState extends State<LoginScreen>
     }
   }
 
+  // Obsecure..
+  bool isObsecure = true;
+
   // ---------------------------------------------------------------------------
   // UI
   // ---------------------------------------------------------------------------
@@ -197,9 +200,22 @@ class _LoginScreenState extends State<LoginScreen>
                       // Password Field
                       TextField(
                         controller: _passwordController,
-                        obscureText: true,
+                        obscureText: isObsecure,
                         style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
+                            suffixIcon: IconButton(
+                            icon: Icon(
+                              isObsecure
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                              color: Colors.white70,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                isObsecure = !isObsecure;
+                              });
+                            },
+                          ),
                           labelText: 'Password',
                           labelStyle:
                               TextStyle(color: Colors.white.withOpacity(0.7)),
